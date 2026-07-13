@@ -1,24 +1,31 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
+import Navbar from "./components/NavBar";
 import Personagens from "./pages/Personagens";
 
 function App() {
 
     return (
 
-        <Routes>
+        <>
 
-            <Route
-                path="/"
-                element={<Navigate to="/personagens" />}
-            />
+            <Navbar />
 
-            <Route
-                path="/personagens"
-                element={<Personagens />}
-            />
+            <Routes>
 
-        </Routes>
+                <Route
+                    path="/"
+                    element={<Navigate to="/personagens" />}
+                />
+
+                <Route
+                    path="/personagens"
+                    element={<Personagens />}
+                />
+
+            </Routes>
+
+        </>
 
     );
 
