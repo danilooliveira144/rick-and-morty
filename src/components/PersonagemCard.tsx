@@ -13,9 +13,7 @@ interface Props {
 function PersonagemCard({ personagem }: Props) {
 
     return (
-
         <div className="card h-100">
-
             <img
                 src={personagem.image}
                 alt={personagem.name}
@@ -23,29 +21,17 @@ function PersonagemCard({ personagem }: Props) {
             />
 
             <div className="card-body">
-
-                <h5 className="card-title">
-                    {personagem.name}
-                </h5>
+                <h5 className="card-title">{personagem.name}</h5>
 
                 <p>
-
                     <strong>Status:</strong> {personagem.status}
-
                 </p>
 
                 <p>
-
                     <strong>Espécie:</strong> {personagem.species}
-
                 </p>
-
             </div>
-
         </div>
-
     );
-
 }
-
 export default PersonagemCard;

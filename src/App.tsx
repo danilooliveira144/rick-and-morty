@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/NavBar";
 import Personagens from "./pages/Personagens";
+import Episodios from "./pages/Episodios";
 
 function App() {
 
@@ -21,6 +22,11 @@ function App() {
                 <Route
                     path="/personagens"
                     element={<Personagens />}
+                />
+
+                <Route
+                    path="/episodios"
+                    element={<Episodios />}
                 />
 
             </Routes>

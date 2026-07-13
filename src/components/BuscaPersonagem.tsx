@@ -11,11 +11,8 @@ function BuscaPersonagem({
 }: BuscaPersonagemProps) {
 
     return (
-
         <div className="row mb-4">
-
             <div className="col-md-10">
-
                 <input
                     type="text"
                     className="form-control"
@@ -23,24 +20,12 @@ function BuscaPersonagem({
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                 />
-
             </div>
 
             <div className="col-md-2">
-
-                <button
-                    className="btn btn-success w-100"
-                    onClick={pesquisar}
-                >
-                    Buscar
-                </button>
-
+                <button className="btn btn-success w-100" onClick={pesquisar}>Buscar</button>
             </div>
-
         </div>
-
     );
-
 }
-
 export default BuscaPersonagem;
