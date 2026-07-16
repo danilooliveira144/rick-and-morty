@@ -21,50 +21,22 @@ function Paginacao({
     return (
         <nav className="mt-5">
             <ul className="pagination justify-content-center">
-                <li
-                    className={`page-item ${
-                        pagina === 1 ? "disabled" : ""
-                    }`}
-                >
-                    <button
-                        className="page-link"
-                        onClick={() => setPagina(pagina - 1)}
-                    >
-                        ←
+                <li className={`page-item ${pagina === 1 ? "disabled" : ""}`}>
+                    <button className="page-link" onClick={() => setPagina(pagina - 1)}>
+                        <i className="bi bi-chevron-left"></i>
                     </button>
                 </li>
 
                 {paginas.map((numero) => (
-                        <li
-                            key={numero}
-                            className={`page-item ${
-                                numero === pagina
-                                    ? "active"
-                                    : ""
-                            }`}
-                        >
-                            <button
-                                className="page-link"
-                                onClick={() => setPagina(numero)}
-                            >
-                                {numero}
-                            </button>
-                        </li>
-                    ))
+                    <li key={numero} className={`page-item ${numero === pagina ? "active" : ""}`}>
+                        <button className="page-link" onClick={() => setPagina(numero)}>{numero}</button>
+                    </li>
+                ))
                 }
 
-                <li
-                    className={`page-item ${
-                        pagina === totalPaginas
-                            ? "disabled"
-                            : ""
-                    }`}
-                >
-                    <button
-                        className="page-link"
-                        onClick={() => setPagina(pagina + 1)}
-                    >
-                        →
+                <li className={`page-item ${pagina === totalPaginas ? "disabled" : ""}`}>
+                    <button className="page-link" onClick={() => setPagina(pagina + 1)}>
+                        <i className="bi bi-chevron-right"></i>
                     </button>
                 </li>
             </ul>

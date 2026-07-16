@@ -83,7 +83,7 @@ function Personagens() {
                 pesquisar={pesquisar}
             />
 
-            <div className="mb-4">
+            <div className="mb-4 col-md-2" >
                 <select
                     className="form-select"
                     value={status}
@@ -101,9 +101,8 @@ function Personagens() {
 
             {loading && (
                 <div className="text-center my-5">
-                    <div className="spinner-border text-success" role="status">
-                        <span className="visually-hidden">Carregando...</span>
-                    </div>
+                    <div className="spinner-border text-success" role="status"></div>
+                    <p className="mt-3 text-light fw-semibold">Carregando...</p>
                 </div>
             )
             }
@@ -120,22 +119,20 @@ function Personagens() {
             )
             }
 
-            {!loading &&
-                personagens.length === 0 && (
-                    <div className="alert alert-warning text-center">
-                        Nenhum personagem encontrado.
-                    </div>
-                )
+            {!loading && personagens.length === 0 && (
+                <div className="alert alert-warning text-center">
+                    Nenhum personagem encontrado.
+                </div>
+            )
             }
 
-            {!loading &&
-                totalPaginas > 0 && (
-                    <Paginacao
-                        pagina={pagina}
-                        totalPaginas={totalPaginas}
-                        setPagina={setPagina}
-                    />
-                )
+            {!loading && totalPaginas > 0 && (
+                <Paginacao
+                    pagina={pagina}
+                    totalPaginas={totalPaginas}
+                    setPagina={setPagina}
+                />
+            )
             }
         </div>
     );

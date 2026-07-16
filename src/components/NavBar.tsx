@@ -1,10 +1,19 @@
 import { NavLink } from "react-router-dom";
 
+import logo from "../assets/portal.png";
+
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg sticky-top">
             <div className="container">
                 <NavLink className="navbar-brand d-flex align-items-center" to="/personagens">
+                    <img
+                        src={logo}
+                        alt="Rick and Morty"
+                        width={55}
+                        height={55}
+                        className="me-2"
+                    />
                     <span className="fw-bold">Rick & Morty</span>
                 </NavLink>
 

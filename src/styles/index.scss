@@ -1,7 +1,155 @@
 @import "bootstrap/scss/bootstrap";
 
 body {
-    background: #0b1120;
+    background: #000000;
     color: white;
     font-family: "Segoe UI", sans-serif;
+}
+
+.navbar {
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+}
+
+.navbar-brand {
+    color: #00e676 !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    transition: color .3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00e676 !important;
+    background: transparent !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #00e676 !important;
+    background: transparent !important;
+    font-weight: bold;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #00e676;
+    font-size: 1.1rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all .3s ease;
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00e676;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+}
+
+.card img {
+    height: 260px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-height: 58px;
+}
+
+.badge {
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: .85rem;
+}
+
+.btn {
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.pagination {
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.page-link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background: var(--surface);
+    color: #ffffff;
+    transition: .3s;
+}
+
+.page-link:hover {
+    background: var(--primary);
+    color: #00e676;
+    border-color: var(--primary);
+}
+
+.page-item.active .page-link {
+    background: var(--primary);
+    color: #00e676;
+    border-color: var(--primary);
+    font-weight: bold;
+}
+
+.page-item.disabled .page-link {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.form-control,
+.form-select {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    height: 48px;
+    transition: .3s;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: var(--surface);
+    color: var(--text);
+    border-color: #00e676;
+    box-shadow: 0 0 0 .2rem rgba(0, 230, 118, .15);
+}
+
+.form-select option {
+    background: #00e676;
+    color: white;
+}
+
+.btn-buscar {
+    background: var(--primary);
+    color: #00e676;
+    font-weight: 600;
+    border-color: #00e676;
+    border-radius: 12px;
+    height: 48px;
+    padding: 0 24px;
+}
+
+.localizacao-card h4 {
+    color: var(--primary);
 }

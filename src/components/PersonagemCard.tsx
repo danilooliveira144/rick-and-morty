@@ -1,3 +1,5 @@
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 interface Personagem {
     id: number;
     name: string;
@@ -12,23 +14,74 @@ interface Props {
 
 function PersonagemCard({ personagem }: Props) {
 
+    function traduzirStatus(status: string): string {
+        switch (status) {
+            case "Alive":
+                return "Vivo";
+
+            case "Dead":
+                return "Morto";
+
+            default:
+                return "Desconhecido";
+        }
+    }
+
+    function traduzirEspecie(especie: string): string {
+        switch (especie) {
+            case "Human":
+                return "Humano";
+
+            case "Alien":
+                return "Alienígena";
+
+            case "Humanoid":
+                return "Humanoide";
+
+            case "Robot":
+                return "Robô";
+
+            case "Animal":
+                return "Animal";
+
+            default:
+                return especie;
+        }
+    }
+
+    function corStatus(status: string): string {
+        switch (status) {
+            case "Alive":
+                return "text-success";
+
+            case "Dead":
+                return "text-danger";
+
+            default:
+                return "text-warning";
+        }
+    }
+
     return (
-        <div className="card h-100">
+        <div className="card h-100 shadow">
+
             <img
                 src={personagem.image}
-                alt={personagem.name}
                 className="card-img-top"
+                alt={personagem.name}
             />
 
-            <div className="card-body">
-                <h5 className="card-title">{personagem.name}</h5>
+            <div className="card-body d-flex flex-column">
+                <h5 className="card-title fw-bold">{personagem.name}</h5>
 
-                <p>
-                    <strong>Status:</strong> {personagem.status}
-                </p>
+                <span className="badge bg-dark border border-secondary mb-3 align-self-start">
+                    <i className={`bi bi-circle-fill me-2 ${corStatus(personagem.status)}`}style={{ fontSize: "10px" }}></i>
+                    {traduzirStatus(personagem.status)}
+                </span>
 
-                <p>
-                    <strong>Espécie:</strong> {personagem.species}
+                <p className="card-text">
+                    <strong>Espécie:</strong>{" "}
+                    {traduzirEspecie(personagem.species)}
                 </p>
             </div>
         </div>

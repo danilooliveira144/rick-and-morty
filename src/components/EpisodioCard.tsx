@@ -17,6 +17,28 @@ interface Props {
     episodio: Episodio;
 }
 
+function traduzirData(data: string): string {
+    const meses = [
+        "janeiro",
+        "fevereiro",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "dezembro"
+    ];
+
+    const dataFormatada = new Date(data);
+
+    return `${dataFormatada.getDate()} de ${meses[dataFormatada.getMonth()]
+        } de ${dataFormatada.getFullYear()}`;
+}
+
 function EpisodioCard({ episodio }: Props) {
 
     const [personagens, setPersonagens] = useState<Personagem[]>([]);
@@ -64,7 +86,7 @@ function EpisodioCard({ episodio }: Props) {
                 <div className="mb-3 text-secondary">
                     <p>
                         <i className="bi bi-calendar-event me-2"></i>
-                        {episodio.air_date}
+                        {traduzirData(episodio.air_date)}
                     </p>
 
                     <p>
@@ -84,21 +106,14 @@ function EpisodioCard({ episodio }: Props) {
                     <div className="mt-3 border-top pt-3">
                         {carregando ? (
                             <div className="text-center">
-                                <div
-                                    className="spinner-border spinner-border-sm text-success"
-                                    role="status"
-                                >
-                                    <span className="visually-hidden">Carregando...</span>
-                                </div>
+                                <div className="spinner-border spinner-border-sm text-success" role="status"></div>
                                 <p className="mt-2">Carregando...</p>
                             </div>
 
                         ) : (
                             <div className="d-flex flex-wrap gap-2">
                                 {personagens.map((personagem) => (
-                                    <span key={personagem.id} className="badge bg-secondary">
-                                        {personagem.name}
-                                    </span>
+                                    <span key={personagem.id} className="badge bg-secondary">{personagem.name}</span>
                                 ))}
                             </div>
                         )

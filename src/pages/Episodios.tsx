@@ -60,7 +60,7 @@ function Episodios() {
 
             <p className="text-secondary mb-4">Explore todos os episódios de Rick and Morty.</p>
 
-            <div className="mb-4">
+            <div className="mb-4 col-md-2">
                 <select
                     className="form-select"
                     value={temporada}
@@ -80,9 +80,8 @@ function Episodios() {
 
             {loading && (
                 <div className="text-center my-5">
-                    <div className="spinner-border text-success" role="status">
-                        <span className="visually-hidden">Carregando...</span>
-                    </div>
+                    <div className="spinner-border text-success" role="status"></div>
+                    <p className="mt-3 text-light fw-semibold">Carregando...</p>
                 </div>
             )
             }
@@ -99,14 +98,13 @@ function Episodios() {
             )
             }
 
-            {!loading &&
-                totalPaginas > 0 && (
-                    <Paginacao
-                        pagina={pagina}
-                        totalPaginas={totalPaginas}
-                        setPagina={setPagina}
-                    />
-                )
+            {!loading && totalPaginas > 0 && (
+                <Paginacao
+                    pagina={pagina}
+                    totalPaginas={totalPaginas}
+                    setPagina={setPagina}
+                />
+            )
             }
         </div>
     );

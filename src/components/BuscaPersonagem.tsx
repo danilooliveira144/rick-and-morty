@@ -12,7 +12,7 @@ function BuscaPersonagem({
 
     return (
         <div className="row mb-4">
-            <div className="col-md-10">
+            <div className="col-md-5">
                 <input
                     type="text"
                     className="form-control"
@@ -22,8 +22,8 @@ function BuscaPersonagem({
                 />
             </div>
 
-            <div className="col-md-2">
-                <button className="btn btn-success w-100" onClick={pesquisar}>Buscar</button>
+            <div className="col-md-1">
+                <button className="btn-buscar" onClick={pesquisar}>Buscar</button>
             </div>
         </div>
     );
