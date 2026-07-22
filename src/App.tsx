@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar";
 import Personagens from "./pages/Personagens";
 import Episodios from "./pages/Episodios";
 import Localizacoes from "./pages/Localizacoes";
+import Favoritos from "./pages/Favoritos";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/personagens" element={<Personagens />}/>
                 <Route path="/episodios" element={<Episodios />}/>
                 <Route path="/localizacoes" element={<Localizacoes />}/>
+                <Route path="/favoritos" element={<Favoritos />} />
             </Routes>
         </>
     );

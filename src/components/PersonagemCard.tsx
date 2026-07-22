@@ -1,4 +1,5 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
+import { useContext } from "react";
+import { FavoritosContext } from "../context/FavoritosContext";
 
 interface Personagem {
     id: number;
@@ -13,6 +14,12 @@ interface Props {
 }
 
 function PersonagemCard({ personagem }: Props) {
+
+    const {
+        adicionarFavorito,
+        removerFavorito,
+        isFavorito,
+    } = useContext(FavoritosContext);
 
     function traduzirStatus(status: string): string {
         switch (status) {
@@ -62,7 +69,10 @@ function PersonagemCard({ personagem }: Props) {
         }
     }
 
+    const favorito = isFavorito(personagem.id);
+
     return (
+
         <div className="card h-100 shadow">
 
             <img
@@ -72,10 +82,11 @@ function PersonagemCard({ personagem }: Props) {
             />
 
             <div className="card-body d-flex flex-column">
+
                 <h5 className="card-title fw-bold">{personagem.name}</h5>
 
                 <span className="badge bg-dark border border-secondary mb-3 align-self-start">
-                    <i className={`bi bi-circle-fill me-2 ${corStatus(personagem.status)}`}style={{ fontSize: "10px" }}></i>
+                    <i className={`bi bi-circle-fill me-2 ${corStatus(personagem.status)}`} style={{ fontSize: "10px" }}></i>
                     {traduzirStatus(personagem.status)}
                 </span>
 
@@ -83,6 +94,25 @@ function PersonagemCard({ personagem }: Props) {
                     <strong>Espécie:</strong>{" "}
                     {traduzirEspecie(personagem.species)}
                 </p>
+
+                <button
+                    className={`btn mt-auto ${favorito
+                            ? "btn-danger"
+                            : "btn-success"
+                        }`}
+                    onClick={() => {
+                        favorito
+                            ? removerFavorito(personagem.id)
+                            : adicionarFavorito(personagem);
+                    }}
+                >
+                    <i className={`bi ${favorito ? "bi-heart-fill" : "bi-heart"} me-2`}></i>
+
+                    {favorito
+                        ? "Remover"
+                        : "Favoritar"}
+
+                </button>
             </div>
         </div>
     );

@@ -1,19 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import App from "./App";
+import { FavoritosProvider } from "./context/FavoritosContext";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./styles/index.scss";
 
-import App from "./App";
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
+createRoot(document.getElementById("root")!).render(
+    <StrictMode>
         <BrowserRouter>
-            <App />
+            <FavoritosProvider>
+                <App />
+            </FavoritosProvider>
         </BrowserRouter>
-    </React.StrictMode>
+    </StrictMode>
 );
