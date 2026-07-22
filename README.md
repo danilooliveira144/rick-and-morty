@@ -1,32 +1,34 @@
-# React + TypeScript + Vite
+# Rick and Morty App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicação desenvolvida em **React + TypeScript** consumindo a **Rick and Morty API**.
 
-Currently, two official plugins are available:
+O projeto permite consultar personagens, episódios e localizações da série, além de favoritar personagens para acesso rápido.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Listagem de personagens
+- Busca por nome
+- Filtro por status
+- Listagem de episódios
+- Listagem de localizações
+- Paginação
+- Favoritar e desfavoritar personagens
+- Armazenamento dos favoritos no LocalStorage
+- Interface responsiva
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## API utilizada
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+https://rickandmortyapi.com/
+
+---
+
+## Autor
+
+Danilo Oliveira
+
+Projeto desenvolvido para fins acadêmicos.
